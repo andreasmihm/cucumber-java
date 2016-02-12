@@ -5,3 +5,8 @@ Feature: Google search
 	Given user navigates to 'https://www.google.de'
 	When user enters 'diva-e' in searchfield
 	Then the text 'diva-e - Digital Value Enterprise' should appear in search result
+	
+  Scenario: Search for ageto
+	Given user navigates to 'https://www.google.de'
+	When user enters 'ageto' in searchfield
+	Then the text 'SAP E-Commerce Spezialist: AGETO' should appear in search result
