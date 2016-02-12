@@ -4,4 +4,4 @@ Feature: Google search
   Scenario: Search for diva-e
 	Given user navigates to 'https://www.google.de'
 	When user enters 'diva-e' in searchfield
-	Then the text 'diva-e - Digital Value Enterprise' should appear in search result
+	Then the text 'diva-e - Digital Value Enterprize' should appear in search result
