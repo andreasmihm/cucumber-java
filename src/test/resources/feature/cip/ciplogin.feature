@@ -19,9 +19,9 @@ Feature: CIP test
 	And the text 'A-DATA CH94 Portable 640GB' should appear in element with xpath '/html/body/div[1]/div[2]/div/div[2]/div[1]/form/div[2]/div/table/tbody/tr/td[3]/div[1]/a'
 	
 	
-#  Scenario: login to CIP
-#	Given user navigates to 'https://cz-dev-dev1.boreus.de:446/INTERSHOP/web/BOS/PrimeTech-PrimeTechBusiness-Site/en_US/-/USD/ViewUserAccount-ShowLogin'
-#	When user enters 'a.mihm@ageto.de' in input with id 'ShopLoginForm_Login'
-#	And user enters 'gfhgfhfhg' in input with id 'ShopLoginForm_Password'
-#	And user clicks on button with xpath '//*[@id="login-user-form"]/div[3]/button'
-#	Then the text 'incorrect' should appear in element with xpath '/html/body/div[1]/div[2]/div[2]/div[1]/div/div'
+  Scenario: login to CIP
+	Given user navigates to 'https://cz-dev-dev1.boreus.de:446/INTERSHOP/web/BOS/PrimeTech-PrimeTechBusiness-Site/en_US/-/USD/ViewUserAccount-ShowLogin'
+	When user enters 'a.mihm@ageto.de' in input with id 'ShopLoginForm_Login'
+	And user enters 'gfhgfhfhg' in input with id 'ShopLoginForm_Password'
+	And user clicks on button with xpath '//*[@id="login-user-form"]/div[3]/button'
+	Then the text 'incorrect' should appear in element with xpath '/html/body/div[1]/div[2]/div[2]/div[1]/div/div'
