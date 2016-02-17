@@ -4,6 +4,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 
 public class WebDriverFactory {
@@ -16,8 +18,13 @@ public class WebDriverFactory {
 			
 			if ("Firefox".equals(browserName))
 				driver = new FirefoxDriver();
-			else if ("Internet Explorer".equals(browserName))
-				driver = new InternetExplorerDriver();
+			else if ("Internet Explorer".equals(browserName)) {
+				 DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer();
+				 capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
+				 capabilities.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,
+				 true);
+				 driver = new InternetExplorerDriver(capabilities);
+			}
 			else if ("Chrome".equals(browserName))
 				driver = new ChromeDriver();
 			else
@@ -28,11 +35,6 @@ public class WebDriverFactory {
 		System.out.println("Using " + driver.getClass().getName() + " for testing");
 		
 		
-		// DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer();
-		// capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
-		// capabilities.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,
-		// true);
-		// driver = new InternetExplorerDriver(capabilities);
 		
 		
 		return driver;
