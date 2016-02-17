@@ -7,6 +7,11 @@
   <version>1.0-SNAPSHOT</version>
   <name>cucumber-java</name>
   <url>http://maven.apache.org</url>
+	<properties>
+		<webdriver.chrome.driver>c:\dev\cucumber-java\chromedriver.exe</webdriver.chrome.driver>
+		<webdriver.ie.driver>c:\dev\cucumber-java\IEDriverServer.exe</webdriver.ie.driver>
+		<cucumber.version>1.2.4</cucumber.version>
+	</properties>  
   <dependencies>
 	<dependency>
 		<groupId>junit</groupId>
@@ -17,13 +22,13 @@
 	<dependency>
 		<groupId>info.cukes</groupId>
 		<artifactId>cucumber-java</artifactId>
-		<version>1.2.4</version>
+		<version>${cucumber.version}</version>
 		<scope>test</scope>
 	</dependency>
 	<dependency>
 		<groupId>info.cukes</groupId>
 		<artifactId>cucumber-junit</artifactId>
-		<version>1.2.4</version>
+		<version>${cucumber.version}</version>
 		<scope>test</scope>
 	</dependency>
 	<dependency>

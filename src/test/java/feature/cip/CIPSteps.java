@@ -2,21 +2,45 @@ package feature.cip;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class CIPSteps {
 
-	WebDriver driver = new FirefoxDriver();
+	WebDriver driver;
+	DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer();
+
+	@Before
+	public void setUp() {
+		// capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
+		// capabilities.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,
+		// true);
+		// driver = new InternetExplorerDriver(capabilities);
+//		driver = new InternetExplorerDriver();
+//		driver = new FirefoxDriver();
+//		driver = new ChromeDriver();
+		driver = new HtmlUnitDriver();
+
+	}
 
 	@Given("^user navigates to '(.+)'$")
 	public void user_navigates_to(String url) throws Throwable {
 		driver.get(url);
+		// System.out.println(driver.getPageSource());
+		try {
+			driver.findElement(By.id("overridelink")).click();
+		} catch (NoSuchElementException e) {
+			// do nothing since there was no ssl cert warning
+		}
+		// driver.get("javascript:document.getElementById('overridelink').click();");
 		driver.get(url);
 	}
 
@@ -39,13 +63,18 @@ public class CIPSteps {
 		driver.findElement(By.xpath(xpath)).click();
 		// dr.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	}
-	
+
 	@Then("^the text '(.+)' should appear in element with xpath '(.+)'$")
 	public void the_text_should_appear_in_element_with_xpath(
 			String expectedText, String xpath) throws Throwable {
 
-		String actualText=driver.findElement(By.xpath(xpath)).getText();
-        Assert.assertTrue("Text not found",actualText.contains(expectedText));		
+		String actualText = driver.findElement(By.xpath(xpath)).getText();
+		Assert.assertTrue("Text not found", actualText.contains(expectedText));
 
+	}
+
+	@After
+	public void cleanUp() {
+		driver.quit();
 	}
 }
