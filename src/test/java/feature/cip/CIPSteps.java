@@ -4,8 +4,8 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.htmlunit.HtmlUnitDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
+
+import com.divae.test.base.WebDriverFactory;
 
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
@@ -16,18 +16,10 @@ import cucumber.api.java.en.When;
 public class CIPSteps {
 
 	WebDriver driver;
-	DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer();
 
 	@Before
 	public void setUp() {
-		// capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
-		// capabilities.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,
-		// true);
-		// driver = new InternetExplorerDriver(capabilities);
-//		driver = new InternetExplorerDriver();
-//		driver = new FirefoxDriver();
-//		driver = new ChromeDriver();
-		driver = new HtmlUnitDriver();
+		driver = WebDriverFactory.createWebDriver();
 
 	}
 
