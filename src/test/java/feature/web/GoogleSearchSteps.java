@@ -20,7 +20,6 @@ import cucumber.api.java.en.When;
 public class GoogleSearchSteps {
 
 	WebDriver driver;
-	DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer();
 
 	@Before
 	public void setUp() {
