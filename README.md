@@ -4,7 +4,7 @@ With this stack BDD Behaviour driven development can be introduced into our web 
 
 <h2>Cucumber</h2>
 provides executable specs, which can be written by QA + dev before the development starts. The developer is then responsible for connecting the spec execution against the actual application. Cucumber supports different kinds of tests, like junit, Webdriver, ...
-The WebDriver based example for testing an Intershop frontend can be found in ciplogin.feature
+The WebDriver based example for testing an Intershop SMB frontend can be found in smblogin.feature
 
 <h2>Selenium</h2>
 provides the web testing tools, like WebDriver, etc.
