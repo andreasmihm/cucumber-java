@@ -8,6 +8,7 @@ import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.safari.SafariDriver;
 
 
 public class WebDriverFactory {
@@ -29,6 +30,8 @@ public class WebDriverFactory {
 			}
 			else if ("Chrome".equals(browserName))
 				driver = new ChromeDriver();
+			else if ("Safari".equals(browserName))
+				driver = new SafariDriver();
 			else
 				driver = new HtmlUnitDriver();
 		} else
