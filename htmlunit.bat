@@ -1,0 +1,1 @@
+mvn clean test -DbrowserName="HtmlUnit"  -Dwebdriver.ie.driver="c:\dev\cucumber-java\IEDriverServer.exe" -Dwebdriver.chrome.driver="c:\dev\cucumber-java\chromedriver.exe"

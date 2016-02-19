@@ -8,8 +8,6 @@
   <name>cucumber-java</name>
   <url>http://maven.apache.org</url>
 	<properties>
-		<webdriver.chrome.driver>c:\dev\cucumber-java\chromedriver.exe</webdriver.chrome.driver>
-		<webdriver.ie.driver>c:\dev\cucumber-java\IEDriverServer.exe</webdriver.ie.driver>
 		<cucumber.version>1.2.4</cucumber.version>
 	</properties>  
   <dependencies>
