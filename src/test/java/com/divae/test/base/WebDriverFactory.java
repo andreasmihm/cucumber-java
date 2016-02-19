@@ -1,4 +1,6 @@
 package com.divae.test.base;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -32,6 +34,9 @@ public class WebDriverFactory {
 		} else
 			driver = new HtmlUnitDriver();
 
+		driver.manage().window().setPosition(new Point(0,0));
+		driver.manage().window().setSize(new Dimension(1024,768));
+		
 		System.out.println("Using " + driver.getClass().getName() + " for testing");
 		
 		
