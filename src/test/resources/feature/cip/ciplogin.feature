@@ -1,6 +1,7 @@
 Feature: CIP test
   to allow a user to use the CIP demo frontend
  
+@ignore
   Scenario: login to CIP
 	Given user navigates to 'https://cz-dev-dev1.boreus.de:446/INTERSHOP/web/BOS/PrimeTech-PrimeTechBusiness-Site/en_US/-/USD/ViewUserAccount-ShowLogin'
 	When user enters 'a.mihm@ageto.de' in input with id 'ShopLoginForm_Login'
@@ -18,7 +19,7 @@ Feature: CIP test
 	# check if product appears in cart
 	And the text 'A-DATA CH94 Portable 640GB' should appear in element 'FirstProductTitle_On_Cart'
 	
-	
+@ignore
   Scenario: login to CIP
 	Given user navigates to 'https://cz-dev-dev1.boreus.de:446/INTERSHOP/web/BOS/PrimeTech-PrimeTechBusiness-Site/en_US/-/USD/ViewUserAccount-ShowLogin'
 	When user enters 'a.mihm@ageto.de' in input with id 'ShopLoginForm_Login'
