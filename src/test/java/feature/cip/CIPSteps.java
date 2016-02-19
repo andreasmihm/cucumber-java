@@ -49,6 +49,11 @@ public class CIPSteps {
 		// dr.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	}
 
+	@When("^user clicks on button '(.+)'$")
+	public void user_clicks_on_button_SignIn_On_LoginPage(String buttonRef) throws Throwable {
+		CIPElements.getWebElementByRef(driver, buttonRef).click();
+	}	
+	
 	@When("^user clicks on link with xpath '(.+)'$")
 	public void user_clicks_on_link_with_xpath_id(String xpath)
 			throws Throwable {
@@ -56,11 +61,18 @@ public class CIPSteps {
 		// dr.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	}
 
-	@Then("^the text '(.+)' should appear in element with xpath '(.+)'$")
-	public void the_text_should_appear_in_element_with_xpath(
-			String expectedText, String xpath) throws Throwable {
+	@When("^user clicks on link '(.+)'$")
+	public void user_clicks_on_link(String ref)
+			throws Throwable {
+		CIPElements.getWebElementByRef(driver, ref).click();
+		// dr.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+	}
+	
+	@Then("^the text '(.+)' should appear in element '(.+)'$")
+	public void the_text_should_appear_in_element(
+			String expectedText, String ref) throws Throwable {
 
-		String actualText = driver.findElement(By.xpath(xpath)).getText();
+		String actualText = CIPElements.getWebElementByRef(driver, ref).getText();
 		Assert.assertTrue("Text not found", actualText.contains(expectedText));
 
 	}

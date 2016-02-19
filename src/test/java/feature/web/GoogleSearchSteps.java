@@ -1,13 +1,10 @@
 package feature.web;
 
-import java.util.concurrent.TimeUnit;
-
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -42,7 +39,9 @@ public class GoogleSearchSteps {
 
 	@When("^user enters '(.+)' in searchfield$")
 	public void user_enters_diva_e_in_searchfield(String searchkey) throws Throwable {
-		driver.findElement(By.xpath("//*[@id='lst-ib']")).sendKeys(searchkey); 
+		driver.findElement(By.xpath("//*[@id='lst-ib']")).sendKeys(searchkey);
+		driver.findElement(By.xpath("//*[@id='lst-ib']")).sendKeys(Keys.ESCAPE);
+		
 		//dr.findElement(By.xpath("//*[@id='tsf']/div[2]/div[3]/center/input[1]")).click();
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("rso")));		
