@@ -4,7 +4,7 @@ Feature: CIP test
   Scenario: login to CIP
 	Given user navigates to 'https://cz-dev-dev1.boreus.de:446/INTERSHOP/web/BOS/PrimeTech-PrimeTechBusiness-Site/en_US/-/USD/ViewUserAccount-ShowLogin'
 	When user enters 'a.mihm@ageto.de' in input with id 'ShopLoginForm_Login'
-	And user enters 'Qwertz1!' in input with id 'ShopLoginForm_Password'
+	And user enters '!InterShop00!' in input with id 'ShopLoginForm_Password'
 	And user clicks on button 'SignIn_On_LoginPage'
 	Then the text 'Overview' should appear in element 'Header_On_MyAccount'
 	# click homepage
