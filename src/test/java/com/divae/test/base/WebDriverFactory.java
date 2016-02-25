@@ -39,6 +39,7 @@ public class WebDriverFactory {
 
 		driver.manage().window().setPosition(new Point(0,0));
 		driver.manage().window().setSize(new Dimension(1024,768));
+		//driver.manage().window().setSize(new Dimension(640,1136)); // iPhone 5
 		
 		System.out.println("Using " + driver.getClass().getName() + " for testing");
 		
