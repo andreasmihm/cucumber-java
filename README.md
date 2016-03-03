@@ -20,7 +20,7 @@ makes it easy to install and easy to integrate into jenkins for automation
 - start the test with mvn clean test -DbrowserName="Firefox|Internet Explorer|Chrome" -Dwebdriver.chrome.driver=PATH_TO_chromedriver -Dwebdriver.ie.driver=PATH_TO_ie_driver
 
 
-<h2>Tool support></h2>
+<h2>Tool support</h2>
 
 cucumber report plugins for jenkins: 
 - https://wiki.jenkins-ci.org/display/JENKINS/Cucumber+Reports+Plugin
