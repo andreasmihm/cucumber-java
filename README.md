@@ -27,3 +27,12 @@ cucumber report plugins for jenkins:
 - https://wiki.jenkins-ci.org/display/JENKINS/Cucumber+Test+Result+Plugin
 cucumber plugin for eclipse: https://github.com/cucumber/cucumber-eclipse
 
+<h2>Test Reporting in Jenkins</h2>
+The Cucumber Report Plugin for jenkins provides great reports of your spec runs
+</br>
+</br>
+All Specs and Features Overview </br></br>
+<img src=".README/report-overview.JPG">
+</br></br>
+Feature Detail </br></br>
+<img src=".README/report-detail.JPG">
