@@ -6,6 +6,6 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
  
 @RunWith(Cucumber.class)
-@CucumberOptions(tags= "~@ignore")
+@CucumberOptions(plugin={"pretty","json:target/cucumber_cip.json"},tags= "~@ignore")
 public class CIPTest {
 }
