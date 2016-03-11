@@ -6,7 +6,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class CIPElements {
+import com.divae.test.base.IPageElements;
+
+public class CIPElements implements IPageElements {
 
 	private static Hashtable<String, String> xpaths;
 	
@@ -25,9 +27,12 @@ public class CIPElements {
 		xpaths.put("ZeissLogo","/html/body/div[1]/div[1]/div[4]/a");
 		xpaths.put("1st_product_in_caroussel","/html/body/div[1]/div[2]/div[4]/div/div/div/div/ul/li[1]/div/a/span[3]");
 		xpaths.put("AddToCart_On_ProductDetail","/html/body/div[1]/div[2]/div/div[4]/div/form/div[4]/button");
+		xpaths.put("UserName","//*[@id=\"ShopLoginForm_Login\"]");
+		xpaths.put("Password","//*[@id=\"ShopLoginForm_Password\"]");
+		
 	}
 
-	public static WebElement getWebElementByRef(WebDriver driver, String ref) {
+	public WebElement getWebElementByRef(WebDriver driver, String ref) {
 
 		String xpath = xpaths.get(ref);
 		if (xpath != null) {

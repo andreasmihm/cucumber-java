@@ -5,8 +5,11 @@ import java.util.Hashtable;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.internal.WebElementToJsonConverter;
 
-public class SMBElements {
+import com.divae.test.base.IPageElements;
+
+public class SMBElements implements IPageElements {
 
 	private static Hashtable<String, String> xpaths;
 	
@@ -25,9 +28,11 @@ public class SMBElements {
 		xpaths.put("Home","/html/body/div[2]/div/div[1]/ol/li[1]/a");
 		xpaths.put("1st_product_in_caroussel","/html/body/div[2]/div/div/div/div/div/div[5]/div/a");
 		xpaths.put("AddToCart_On_ProductDetail","//*[@id=\"productDetailForm_11089966\"]/div[3]/button");
+		xpaths.put("UserName","//*[@id=\"ShopLoginForm_Login\"]");
+		xpaths.put("Password","//*[@id=\"ShopLoginForm_Password\"]");
 	}
 
-	public static WebElement getWebElementByRef(WebDriver driver, String ref) {
+	public WebElement getWebElementByRef(WebDriver driver, String ref) {
 
 		String xpath = xpaths.get(ref);
 		if (xpath != null) {
