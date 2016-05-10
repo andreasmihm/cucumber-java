@@ -3,7 +3,7 @@ Feature: SMB76 testing
  
   Scenario: login and add product to cart
 	Given user navigates to 'https://jxdemoserver.intershop.de/INTERSHOP/web/WFS/inSPIRED-inTRONICS_Business-Site/en_US/-/USD/ViewUserAccount-ShowLogin'
-	When user enters 'a.mihm@ageto.de' in input 'UserName'
+	When user enters 'andreas.mihm@diva-e.com' in input 'UserName'
 	And user enters '!InterShop00!' in input 'Password'
 	And user clicks on button 'SignIn_On_LoginPage'
 	Then the text 'OVERVIEW' should appear in element 'Header_On_MyAccount'
