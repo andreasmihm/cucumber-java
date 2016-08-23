@@ -25,8 +25,11 @@ public class WebDriverFactory {
 		String browserName = System.getProperty("browserName");
 		if (browserName != null) {
 
-			if ("Firefox".equals(browserName))
-				driver = new FirefoxDriver();
+			if ("Firefox".equals(browserName)) {
+				DesiredCapabilities capabilities = DesiredCapabilities.firefox();
+				capabilities.setCapability("marionette", true);
+				driver = new FirefoxDriver(capabilities);
+			}
 			else if ("Internet Explorer".equals(browserName)) {
 				DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer();
 				capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);

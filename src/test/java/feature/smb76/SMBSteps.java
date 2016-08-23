@@ -56,7 +56,12 @@ public class SMBSteps extends BasicWebDriverSteps{
 
 	@After
 	public void cleanUp() {
-		driver.quit();
-	}	
-
+		
+		try {
+			driver.quit();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			//e.printStackTrace();
+		}
+	}
 }
