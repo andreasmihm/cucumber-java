@@ -26,7 +26,7 @@ public class SMBElements implements IPageElements {
 		xpaths.put("FirstProductTitle_On_Cart","/html/body/div[2]/div/div[1]/div[2]/div/form/div/div[1]/div[2]/div/div[2]/div[1]/div/div[1]/a");
 		xpaths.put("Warning_On_LoginPage","/html/body/div[2]/div/div[2]/div[1]/div/div/div");
 		xpaths.put("Home","/html/body/div[2]/div/div[1]/ol/li[1]/a");
-		xpaths.put("1st_product_in_caroussel","/html/body/div[2]/div/div/div/div/div/div[5]/div/a");
+		xpaths.put("1st_product_in_caroussel","/html/body/div[2]/div/div[3]/div[1]/div/div/div/div[5]/div/a");
 		xpaths.put("AddToCart_On_ProductDetail","//*[@id=\"productDetailForm_11089966\"]/div[3]/button");
 		xpaths.put("UserName","//*[@id=\"ShopLoginForm_Login\"]");
 		xpaths.put("Password","//*[@id=\"ShopLoginForm_Password\"]");
