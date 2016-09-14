@@ -1,4 +1,4 @@
-package feature.smb76;
+package feature.smb77;
 
 import com.divae.test.base.BasicWebDriverSteps;
 import com.divae.test.base.WebDriverFactory;

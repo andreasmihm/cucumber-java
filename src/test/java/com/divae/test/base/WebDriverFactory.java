@@ -5,6 +5,7 @@ import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.CapabilityType;
@@ -28,6 +29,9 @@ public class WebDriverFactory {
 			if ("Firefox".equals(browserName)) {
 				DesiredCapabilities capabilities = DesiredCapabilities.firefox();
 				capabilities.setCapability("marionette", true);
+				capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
+				//FirefoxProfile firefoxProfile = new FirefoxProfile();
+				//firefoxProfile.setAcceptUntrustedCertificates(true);
 				driver = new FirefoxDriver(capabilities);
 			}
 			else if ("Internet Explorer".equals(browserName)) {

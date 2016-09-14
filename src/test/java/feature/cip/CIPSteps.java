@@ -13,7 +13,7 @@ import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import feature.smb76.SMBElements;
+import feature.smb77.SMBElements;
 
 public class CIPSteps extends BasicWebDriverSteps {
 
